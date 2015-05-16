@@ -1,0 +1,9 @@
+PredicateParser/bin/
+PredicateParser/obj/
+PredicateParser.Tests/bin/
+PredicateParser.Tests/obj/
+*.v12.suo
+.nuget/
+packages/
+*.sln.DotSettings.user
+*.nupkg
