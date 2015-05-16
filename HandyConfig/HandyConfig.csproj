@@ -7,8 +7,8 @@
     <ProjectGuid>{E29F9B49-29F8-4221-B9AC-711E59BAC5EC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Configr</RootNamespace>
-    <AssemblyName>Configr</AssemblyName>
+    <RootNamespace>HandyConfig</RootNamespace>
+    <AssemblyName>HandyConfig</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

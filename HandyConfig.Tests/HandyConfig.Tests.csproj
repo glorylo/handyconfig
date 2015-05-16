@@ -6,8 +6,8 @@
     <ProjectGuid>{15867A5E-9A36-453F-ACE1-0309A82AA317}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Configr.Tests</RootNamespace>
-    <AssemblyName>Configr.Tests</AssemblyName>
+    <RootNamespace>HandyConfig.Tests</RootNamespace>
+    <AssemblyName>HandyConfig.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -54,9 +54,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Configr\Configr.csproj">
+    <ProjectReference Include="..\HandyConfig\HandyConfig.csproj">
       <Project>{e29f9b49-29f8-4221-b9ac-711e59bac5ec}</Project>
-      <Name>Configr</Name>
+      <Name>HandyConfig</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

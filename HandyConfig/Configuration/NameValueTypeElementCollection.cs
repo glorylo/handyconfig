@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Configr.Configuration
+namespace HandyConfig.Configuration
 {
     public class NameValueTypeElementCollection : ConfigurationElementCollection
     {

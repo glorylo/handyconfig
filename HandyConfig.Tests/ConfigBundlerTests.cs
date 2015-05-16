@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 using System;
 
-namespace Configr.Tests
+namespace HandyConfig.Tests
 {
     [TestFixture]
     public class ConfigBundlerTests

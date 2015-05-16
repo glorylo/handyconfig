@@ -3,14 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Configr", "Configr\Configr.csproj", "{E29F9B49-29F8-4221-B9AC-711E59BAC5EC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HandyConfig", "HandyConfig\HandyConfig.csproj", "{E29F9B49-29F8-4221-B9AC-711E59BAC5EC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{04C61C9E-828D-48BE-81F1-6BF7A7C6CE18}"
 	ProjectSection(SolutionItems) = preProject
 		LICENSE.txt = LICENSE.txt
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Configr.Tests", "Configr.Tests\Configr.Tests.csproj", "{15867A5E-9A36-453F-ACE1-0309A82AA317}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HandyConfig.Tests", "HandyConfig.Tests\HandyConfig.Tests.csproj", "{15867A5E-9A36-453F-ACE1-0309A82AA317}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{82E997D9-3922-4174-A770-B0F2027BEFC3}"
 	ProjectSection(SolutionItems) = preProject

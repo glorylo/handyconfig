@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Configr.Configuration
+namespace HandyConfig.Configuration
 {
     public class ConfigurationBundler
     {
@@ -18,12 +18,19 @@ namespace Configr.Configuration
             _settings = settings;
         }
 
-        public IDictionary<string, object> GatherSettings()
+        private void UpsertSetting(string key, object value) {
+            if (_bundle.ContainsKey(key))
+                _bundle[key] = value;
+            else
+                _bundle.Add(key, value);
+         }
+
+        public IDictionary<string, object> Bundle()
         {
             foreach (NameValueTypeElement s in _settings)
             {
                 var o = Convert.ChangeType(s.Value, Type.GetType(s.Type));
-                _bundle.Add(s.Name, o);
+                UpsertSetting(s.Name, o);
                 Debug.WriteLine("Name: " + s.Name);
                 Debug.WriteLine("Value: " + s.Value);
                 Debug.WriteLine("Type: " + s.Type);
