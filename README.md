@@ -1,4 +1,6 @@
-![#}(https://img.shields.io/nuget/v/handyconfig.svg)
+![#](https://img.shields.io/nuget/v/handyconfig.svg?style=flat)</div>
+<br/>
+
 
 #Introduction
 
@@ -41,6 +43,8 @@ Other examples with date time, integers, doubles and more:
 </handyconfig>
 ```
 # Installation
+
+Using Nuget Package Manager Console:
 
 ```
 PM> Install-Package HandyConfig
