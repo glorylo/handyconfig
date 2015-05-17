@@ -10,13 +10,13 @@ namespace HandyConfig.Tests
     public class ConfigBundlerTests
     {
         public NameValueTypeElementCollection Settings;
-        public ConfigurationBundler Bundler { get; set; }
+        public ConfigBundler Bundler { get; set; }
 
         [SetUp]
         public void Setup()
         {
             Settings = HandyConfigSection.Settings;
-            Bundler = new ConfigurationBundler(new Dictionary<string, object>(), Settings);
+            Bundler = new ConfigBundler(new Dictionary<string, object>(), Settings);
         }
 
         [Test]

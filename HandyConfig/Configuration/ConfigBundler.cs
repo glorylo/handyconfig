@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace HandyConfig.Configuration
 {
-    public class ConfigurationBundler
+    public class ConfigBundler
     {
         private IDictionary<string, object> _bundle;
         private NameValueTypeElementCollection _settings;
 
-        public ConfigurationBundler(IDictionary<string, object> bundle, NameValueTypeElementCollection settings)
+        public ConfigBundler(IDictionary<string, object> bundle, NameValueTypeElementCollection settings)
         {
             _bundle = bundle;
             _settings = settings;

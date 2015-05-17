@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <licenseUrl>https://github.com/glorylo/handyconfig/blob/master/LICENSE.txt</licenseUrl>
+    <projectUrl>https://github.com/glorylo/handyconfig/</projectUrl>
+    <iconUrl></iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <releaseNotes>A lightweight librar to load application configuration settings into a dictionary
+1.0.0
+- initial release
+	</releaseNotes>
+    <copyright>Copyright 2015</copyright>
+    <tags>appsetting settings configuration environment load dictionary convert</tags>
+  </metadata>
+</package>
