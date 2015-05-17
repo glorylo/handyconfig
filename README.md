@@ -1,3 +1,5 @@
+![#}(https://img.shields.io/nuget/v/handyconfig.svg)
+
 #Introduction
 
 HandyConfig is a lightweight library to load application configuration settings into a dictionary.  It simplifies reading values from a string, apply parsing, then do type conversion.
@@ -38,7 +40,15 @@ Other examples with date time, integers, doubles and more:
     <add name="double" value="100.99" type="System.Double" />
 </handyconfig>
 ```
+# Installation
+
+```
+PM> Install-Package HandyConfig
+```
+
+
 Have fun,
+
 
 Glory Lo
 
