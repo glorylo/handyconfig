@@ -20,7 +20,7 @@ namespace HandyConfig.Tests
         }
 
         [Test]
-        public void DuplicateLoadTest()
+        public void CountTest()
         {
             var configs = Bundler.Bundle();
             Assert.IsTrue(configs.Count == 6);
