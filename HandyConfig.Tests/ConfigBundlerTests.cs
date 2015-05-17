@@ -132,5 +132,24 @@ namespace HandyConfig.Tests
             var check = Compare(actual, aString);
             Assert.IsTrue(actual == aString);
         }
+
+        [Test]
+        public void GetDateTimeSettingTest()
+        {
+            Bundler.Bundle(Settings);
+            var dec25 = new DateTime(1950, 12, 25);
+            DateTime actual = Bundler.GetSetting<DateTime>("date");
+            var check = Compare(actual, dec25);
+            Assert.IsTrue(actual == dec25);
+        }
+
+        [Test]
+        public void GetUnknownSettingTest()
+        {
+            Bundler.Bundle(Settings);
+            TestDelegate getUnknown = () => { Bundler.GetSetting<DateTime>("does not exist"); };
+            Assert.Throws(typeof(KeyNotFoundException), getUnknown);
+        }
+
     }
 }
