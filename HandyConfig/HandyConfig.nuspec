@@ -10,7 +10,7 @@
     <projectUrl>https://github.com/glorylo/handyconfig/</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <releaseNotes>A lightweight librar to load application configuration settings into a dictionary
+    <releaseNotes>A lightweight library to load application configuration settings into a dictionary
 1.0.0
 - initial release
 	</releaseNotes>
