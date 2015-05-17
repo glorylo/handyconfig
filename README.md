@@ -28,7 +28,7 @@ var configs = bundler.Bundle();
 
 var installApp = configs["InstallApp"];
 
-// installApp == true
+// installApp.Equals(true)
 ```
 
 Other examples with date time, integers, doubles and more:
