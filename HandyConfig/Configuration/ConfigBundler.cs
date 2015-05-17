@@ -18,7 +18,8 @@ namespace HandyConfig.Configuration
             _settings = settings;
         }
 
-        private void UpsertSetting(string key, object value) {
+        private void UpsertSetting(string key, object value) 
+        {
             if (_bundle.ContainsKey(key))
                 _bundle[key] = value;
             else

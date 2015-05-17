@@ -38,6 +38,7 @@ Other examples with date time, integers, doubles and more:
     <add name="double" value="100.99" type="System.Double" />
 </handyconfig>
 ```
+Have fun,
 
 Glory Lo
 
