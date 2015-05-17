@@ -9,26 +9,24 @@ namespace HandyConfig.Configuration
 {
     public class ConfigBundler
     {
-        private IDictionary<string, object> _bundle;
-        private NameValueTypeElementCollection _settings;
+        public IDictionary<string, object> Configs { get; private set; }
 
-        public ConfigBundler(IDictionary<string, object> bundle, NameValueTypeElementCollection settings)
+        public ConfigBundler(IDictionary<string, object> configs)
         {
-            _bundle = bundle;
-            _settings = settings;
+            Configs = configs;
         }
 
         private void UpsertSetting(string key, object value) 
         {
-            if (_bundle.ContainsKey(key))
-                _bundle[key] = value;
+            if (Configs.ContainsKey(key))
+                Configs[key] = value;
             else
-                _bundle.Add(key, value);
+                Configs.Add(key, value);
          }
 
-        public IDictionary<string, object> Bundle()
+        public ConfigBundler Bundle(NameValueTypeElementCollection settings)
         {
-            foreach (NameValueTypeElement s in _settings)
+            foreach (NameValueTypeElement s in settings)
             {
                 var o = Convert.ChangeType(s.Value, Type.GetType(s.Type));
                 UpsertSetting(s.Name, o);
@@ -37,8 +35,7 @@ namespace HandyConfig.Configuration
                 Debug.WriteLine("Type: " + s.Type);
             }
 
-            return _bundle;
-
+            return this;
         }
     }
 }

@@ -16,13 +16,13 @@ namespace HandyConfig.Tests
         public void Setup()
         {
             Settings = HandyConfigSection.Settings;
-            Bundler = new ConfigBundler(new Dictionary<string, object>(), Settings);
+            Bundler = new ConfigBundler(new Dictionary<string, object>());
         }
 
         [Test]
         public void CountTest()
         {
-            var configs = Bundler.Bundle();
+            var configs = Bundler.Bundle(Settings).Configs;
             Assert.IsTrue(configs.Count == 6);
         }
 
@@ -36,7 +36,7 @@ namespace HandyConfig.Tests
         [Test]
         public void StringTypeTest()
         {
-            var configs = Bundler.Bundle();
+            var configs = Bundler.Bundle(Settings).Configs;
             var check = Compare(configs["longstring"], "a long string");
             Assert.IsTrue(check);
         }
@@ -44,7 +44,7 @@ namespace HandyConfig.Tests
         [Test]
         public void IntValueTest()
         {
-            var configs = Bundler.Bundle();
+            var configs = Bundler.Bundle(Settings).Configs;
             var check = Compare(configs["fiftythree"], 53);
             Assert.IsTrue(check);
         }
@@ -52,7 +52,7 @@ namespace HandyConfig.Tests
         [Test]
         public void TrueValueTest()
         {
-            var configs = Bundler.Bundle();
+            var configs = Bundler.Bundle(Settings).Configs;
             var check = Compare(configs["booltrue"], true);
             Assert.IsTrue(check);
         }
@@ -60,7 +60,7 @@ namespace HandyConfig.Tests
         [Test]
         public void FalseValueTest()
         {
-            var configs = Bundler.Bundle();
+            var configs = Bundler.Bundle(Settings).Configs;
             var check = Compare(configs["boolfalse"], false);
             Assert.IsTrue(check);
         }
@@ -68,7 +68,7 @@ namespace HandyConfig.Tests
         [Test]
         public void DateTest()
         {
-            var configs = Bundler.Bundle();
+            var configs = Bundler.Bundle(Settings).Configs;
             var dec25 = new DateTime(1950, 12, 25);
             var check = Compare(configs["date"], dec25);
             Assert.IsTrue(check);
@@ -77,7 +77,7 @@ namespace HandyConfig.Tests
         [Test]
         public void DoubleTest()
         {
-            var configs = Bundler.Bundle();
+            var configs = Bundler.Bundle(Settings).Configs;
             var aDouble = 100.99;
             var check = Compare(configs["double"], aDouble);
             Assert.IsTrue(check);
