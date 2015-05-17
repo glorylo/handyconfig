@@ -82,5 +82,15 @@ namespace HandyConfig.Tests
             var check = Compare(configs["double"], aDouble);
             Assert.IsTrue(check);
         }
+
+        [Test]
+        public void GetDoubleSettingTest()
+        {
+            Bundler.Bundle(Settings);
+            var aDouble = 100.99;
+            double actual = Bundler.GetSetting<double>("double");
+            var check = Compare(actual, aDouble);
+            Assert.IsTrue(check);
+        }
     }
 }

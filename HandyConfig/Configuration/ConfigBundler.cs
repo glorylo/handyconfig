@@ -37,5 +37,15 @@ namespace HandyConfig.Configuration
 
             return this;
         }
+
+        public T GetSetting<T>(string key) 
+        { 
+            var setting = Configs[key];
+
+            if (setting == null)
+                throw new KeyNotFoundException("Unable to find setting with key: " + key);
+
+            return (T) setting;
+        }
     }
 }
