@@ -9,20 +9,25 @@ namespace HandyConfig.Configuration
 {
     public class ConfigBundler
     {
-        public IDictionary<string, object> Configs { get; private set; }
+        private IDictionary<string, object> _configs;
 
         public ConfigBundler(IDictionary<string, object> configs)
         {
-            Configs = configs;
+            _configs = configs;
         }
 
         private void UpsertSetting(string key, object value) 
         {
-            if (Configs.ContainsKey(key))
-                Configs[key] = value;
+            if (_configs.ContainsKey(key))
+                _configs[key] = value;
             else
-                Configs.Add(key, value);
+                _configs.Add(key, value);
          }
+
+        public IDictionary<string, object> GetConfigs()
+        {
+            return _configs;
+        }
 
         public ConfigBundler Bundle(NameValueTypeElementCollection settings)
         {
@@ -40,7 +45,7 @@ namespace HandyConfig.Configuration
 
         public T GetSetting<T>(string key) 
         { 
-            var setting = Configs[key];
+            var setting = _configs[key];
 
             if (setting == null)
                 throw new KeyNotFoundException("Unable to find setting with key: " + key);
