@@ -84,6 +84,36 @@ namespace HandyConfig.Tests
         }
 
         [Test]
+        public void GetIntSettingTest()
+        {
+            Bundler.Bundle(Settings);
+            int aInt = 53;
+            int actual = Bundler.GetSetting<int>("fiftythree");
+            var check = Compare(actual, aInt);
+            Assert.IsTrue(actual == aInt);
+        }
+
+        [Test]
+        public void GetFalseBoolTest()
+        {
+            Bundler.Bundle(Settings);
+            var aBool = false;
+            bool actual = Bundler.GetSetting<bool>("boolfalse");
+            var check = Compare(actual, aBool);
+            Assert.IsTrue(actual == aBool);
+        }
+
+        [Test]
+        public void GetTrueBoolTest()
+        {
+            Bundler.Bundle(Settings);
+            var aBool = true;
+            bool actual = Bundler.GetSetting<bool>("booltrue");
+            var check = Compare(actual, aBool);
+            Assert.IsTrue(actual == aBool);
+        }
+
+        [Test]
         public void GetDoubleSettingTest()
         {
             Bundler.Bundle(Settings);
@@ -91,6 +121,16 @@ namespace HandyConfig.Tests
             double actual = Bundler.GetSetting<double>("double");
             var check = Compare(actual, aDouble);
             Assert.IsTrue(actual == aDouble);
+        }
+
+        [Test]
+        public void GetStringSettingTest()
+        {
+            Bundler.Bundle(Settings);
+            var aString = "a long string" ;
+            string actual = Bundler.GetSetting<string>("longstring");
+            var check = Compare(actual, aString);
+            Assert.IsTrue(actual == aString);
         }
     }
 }
