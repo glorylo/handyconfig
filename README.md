@@ -10,6 +10,8 @@ Would you rather write:
 
 ```csharp
 var installApp = Convert.ToBoolean(ConfigurationManager.AppSettings["InstallApp"])
+var timeOutSecs = Convert.ToInt32(ConfigurationManager.AppSettings["TimeoutSecs"]);
+var expiryDate = Convert.ToDateTime(ConfigurationManager.AppSettings["ExpiryDate"]);
 ```
 
 Or in your App.config
@@ -17,31 +19,32 @@ Or in your App.config
 ```xml
  <handyconfig>
     <add name="InstallApp" value="true" type="System.Boolean" /> 
+    <add name="TimeoutSecs" value="30" type="System.Int32"/>
+    <add name="ExpiryDate" value="Dec 31, 2015" type="System.DateTime" />
     ...
 </handyconfig>
 ```
 
-```csharp     
-var bundler = new ConfigBundler(new Dictionary<string, object>(), HandyConfigSection.Settings);
+```csharp   
+var configs = new Dictionary<string, object>();
+var bundler = new ConfigBundler(configs);
+bundler.Bundle(HandyConfigSection.Settings);
 
-var configs = bundler.Bundle();
+// installApp == true
+bool installApp = bundler.GetSetting<bool>("InstallApp");
 
-var installApp = configs["InstallApp"];
+// timeoutSecs == 30
+int timeoutSecs = bundler.GetSetting<int>("TimeoutSecs");
 
-// installApp.Equals(true)
+// expiryDate is 2015/12/31
+DateTime expiryDate = bundler.GetSetting<DateTime>("ExpiryDate");
+
+// get back all the configuration settings
+configs = bundler.GetConfigs();
+
 ```
 
-Other examples with date time, integers, doubles and more:
-```xml
-<handyconfig>
-    <add name="longstring" value="a long string" />
-    <add name="fiftythree" value="53" type="System.Int32"/>
-    <add name="booltrue" value="true" type="System.Boolean" />
-    <add name="boolfalse" value="false" type="System.Boolean" />
-    <add name="date" value="Dec 25, 1950" type="System.DateTime" />
-    <add name="double" value="100.99" type="System.Double" />
-</handyconfig>
-```
+
 # Installation
 
 Using Nuget Package Manager Console:
@@ -58,7 +61,7 @@ Add the following section to your App.Config:
   </configSections>
 ```
 
-Then add your settings.  Here is a template App.config
+Then add your settings under the handyconfig section.  Here is an entire template App.config:
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -68,16 +71,14 @@ Then add your settings.  Here is a template App.config
   </configSections>
 
   <handyconfig>
-    <add name="longstring" value="a long string" />
-    <add name="fiftythree" value="53" type="System.Int32"/>
-    <add name="booltrue" value="true" type="System.Boolean" />
-    <add name="boolfalse" value="false" type="System.Boolean" />
-    <add name="date" value="Dec 25, 1950" type="System.DateTime" />
-    <add name="double" value="100.99" type="System.Double" />
+    <add name="InstallApp" value="true" type="System.Boolean" /> 
+    <add name="TimeoutSecs" value="30" type="System.Int32"/>
+    <add name="ExpiryDate" value="Dec 31, 2015" type="System.DateTime" />
   </handyconfig>
 </configuration>
 
 ```
+
 
 Have fun,
 
