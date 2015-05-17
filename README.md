@@ -50,6 +50,34 @@ Using Nuget Package Manager Console:
 PM> Install-Package HandyConfig
 ```
 
+Add the following section to your App.Config:
+
+```xml
+  <configSections>
+    <section name="handyconfig" type="HandyConfig.Configuration.HandyConfigSection, HandyConfig"/>
+  </configSections>
+```
+
+Then add your settings.  Here is a template App.config
+
+```xml
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <configSections>
+    <section name="handyconfig" type="HandyConfig.Configuration.HandyConfigSection, HandyConfig"/>
+  </configSections>
+
+  <handyconfig>
+    <add name="longstring" value="a long string" />
+    <add name="fiftythree" value="53" type="System.Int32"/>
+    <add name="booltrue" value="true" type="System.Boolean" />
+    <add name="boolfalse" value="false" type="System.Boolean" />
+    <add name="date" value="Dec 25, 1950" type="System.DateTime" />
+    <add name="double" value="100.99" type="System.Double" />
+  </handyconfig>
+</configuration>
+
+```
 
 Have fun,
 
