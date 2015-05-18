@@ -31,13 +31,13 @@ var bundler = new ConfigBundler(configs);
 bundler.Bundle(HandyConfigSection.Settings);
 
 // installApp == true
-bool installApp = bundler.GetSetting<bool>("InstallApp");
+bool installApp = bundler.Get<bool>("InstallApp");
 
 // timeoutSecs == 30
-int timeoutSecs = bundler.GetSetting<int>("TimeoutSecs");
+int timeoutSecs = bundler.Get<int>("TimeoutSecs");
 
 // expiryDate is 2015/12/31
-DateTime expiryDate = bundler.GetSetting<DateTime>("ExpiryDate");
+DateTime expiryDate = bundler.Get<DateTime>("ExpiryDate");
 
 // get back all the configuration settings
 configs = bundler.GetConfigs();
