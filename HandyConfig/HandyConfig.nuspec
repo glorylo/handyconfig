@@ -10,14 +10,14 @@
     <projectUrl>https://github.com/glorylo/handyconfig/</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <releaseNotes>A lightweight library to load application configuration settings into a dictionary
-1.0.0
-- initial release
+    <releaseNotes>
+      1.10
+      - added GetSetting() to ConfigBundler
 
-1.10
-- ConfigBundler can now GetSetting()
+      1.0.0
+      - initial release
 
-	</releaseNotes>
+    </releaseNotes>
     <copyright>Copyright 2015</copyright>
     <tags>appsetting settings configuration environment load dictionary convert</tags>
   </metadata>
