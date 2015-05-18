@@ -43,7 +43,7 @@ namespace HandyConfig.Configuration
             return this;
         }
 
-        public T GetSetting<T>(string key) 
+        public T Get<T>(string key) 
         { 
             if (!_configs.ContainsKey(key))
                 throw new KeyNotFoundException("Unable to find setting with key: " + key);

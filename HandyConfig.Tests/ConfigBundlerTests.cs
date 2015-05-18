@@ -88,7 +88,7 @@ namespace HandyConfig.Tests
         {
             Bundler.Bundle(Settings);
             int aInt = 53;
-            int actual = Bundler.GetSetting<int>("fiftythree");
+            int actual = Bundler.Get<int>("fiftythree");
             var check = Compare(actual, aInt);
             Assert.IsTrue(actual == aInt);
         }
@@ -98,7 +98,7 @@ namespace HandyConfig.Tests
         {
             Bundler.Bundle(Settings);
             var aBool = false;
-            bool actual = Bundler.GetSetting<bool>("boolfalse");
+            bool actual = Bundler.Get<bool>("boolfalse");
             var check = Compare(actual, aBool);
             Assert.IsTrue(actual == aBool);
         }
@@ -108,7 +108,7 @@ namespace HandyConfig.Tests
         {
             Bundler.Bundle(Settings);
             var aBool = true;
-            bool actual = Bundler.GetSetting<bool>("booltrue");
+            bool actual = Bundler.Get<bool>("booltrue");
             var check = Compare(actual, aBool);
             Assert.IsTrue(actual == aBool);
         }
@@ -118,7 +118,7 @@ namespace HandyConfig.Tests
         {
             Bundler.Bundle(Settings);
             var aDouble = 100.99;
-            double actual = Bundler.GetSetting<double>("double");
+            double actual = Bundler.Get<double>("double");
             var check = Compare(actual, aDouble);
             Assert.IsTrue(actual == aDouble);
         }
@@ -128,7 +128,7 @@ namespace HandyConfig.Tests
         {
             Bundler.Bundle(Settings);
             var aString = "a long string" ;
-            string actual = Bundler.GetSetting<string>("longstring");
+            string actual = Bundler.Get<string>("longstring");
             var check = Compare(actual, aString);
             Assert.IsTrue(actual == aString);
         }
@@ -138,7 +138,7 @@ namespace HandyConfig.Tests
         {
             Bundler.Bundle(Settings);
             var dec25 = new DateTime(1950, 12, 25);
-            DateTime actual = Bundler.GetSetting<DateTime>("date");
+            DateTime actual = Bundler.Get<DateTime>("date");
             var check = Compare(actual, dec25);
             Assert.IsTrue(actual == dec25);
         }
@@ -147,7 +147,7 @@ namespace HandyConfig.Tests
         public void GetUnknownSettingTest()
         {
             Bundler.Bundle(Settings);
-            TestDelegate getUnknown = () => { Bundler.GetSetting<DateTime>("does not exist"); };
+            TestDelegate getUnknown = () => { Bundler.Get<DateTime>("does not exist"); };
             Assert.Throws(typeof(KeyNotFoundException), getUnknown);
         }
 
