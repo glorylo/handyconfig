@@ -36,8 +36,8 @@ namespace HandyConfig.Configuration
                 var o = Convert.ChangeType(s.Value, Type.GetType(s.Type));
                 UpsertSetting(s.Name, o);
                 Debug.WriteLine("Name: " + s.Name);
-                Debug.WriteLine("Value: " + s.Value);
-                Debug.WriteLine("Type: " + s.Type);
+                Debug.WriteLine("Value: " + o);
+                Debug.WriteLine("Type: " + o.GetType());
             }
 
             return this;
