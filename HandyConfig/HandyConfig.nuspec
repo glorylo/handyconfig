@@ -11,12 +11,14 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
     <releaseNotes>
-      1.10
-      - added GetSetting() to ConfigBundler
+1.1.1
+- maintanence release
+      
+1.10
+- added GetSetting() to ConfigBundler
 
-      1.0.0
-      - initial release
-
+1.0.0
+- initial release
     </releaseNotes>
     <copyright>Copyright 2015</copyright>
     <tags>appsetting settings configuration environment load dictionary convert</tags>

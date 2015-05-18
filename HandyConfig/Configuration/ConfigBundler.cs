@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace HandyConfig.Configuration
-{
+{   
     public class ConfigBundler
     {
         private IDictionary<string, object> _configs;
