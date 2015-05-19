@@ -11,6 +11,10 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
     <releaseNotes>
+      
+1.2.0
+- GetSetting() is now just Get()
+
 1.1.1
 - maintanence release
       
@@ -19,8 +23,9 @@
 
 1.0.0
 - initial release
+
     </releaseNotes>
     <copyright>Copyright 2015</copyright>
-    <tags>appsetting settings configuration environment load dictionary convert</tags>
+    <tags>appconfig appsetting settings configuration environment load dictionary convert</tags>
   </metadata>
 </package>
