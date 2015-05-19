@@ -13,6 +13,7 @@
     <releaseNotes>
       
 1.2.0
+- type attribute is now case insensitive
 - GetSetting() is now just Get()
 
 1.1.1

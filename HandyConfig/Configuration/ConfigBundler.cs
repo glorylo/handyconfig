@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HandyConfig.Configuration
 {   
     public class ConfigBundler
     {
-        private IDictionary<string, object> _configs;
+        private readonly IDictionary<string, object> _configs;
 
         public ConfigBundler(IDictionary<string, object> configs)
         {
