@@ -11,7 +11,9 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
     <releaseNotes>
-      
+1.2.1 
+- added new class HandyConfigElement
+
 1.2.0
 - type attribute is now case insensitive
 - GetSetting() is now just Get()
