@@ -23,7 +23,7 @@ namespace HandyConfig.Tests
         public void CountTest()
         {
             var configs = Bundler.Bundle(Settings).GetConfigs();
-            Assert.IsTrue(configs.Count == 6);
+            Assert.IsTrue(configs.Count == 7);
         }
 
         private bool Compare<T>(object actual, T expected)
@@ -147,9 +147,18 @@ namespace HandyConfig.Tests
         public void GetUnknownSettingTest()
         {
             Bundler.Bundle(Settings);
-            TestDelegate getUnknown = () => { Bundler.Get<DateTime>("does not exist"); };
+            TestDelegate getUnknown = () =>  Bundler.Get<DateTime>("does not exist"); ;
             Assert.Throws(typeof(KeyNotFoundException), getUnknown);
         }
 
+        [Test]
+        public void GetCaseInsensitiveDoubleTest()
+        {
+            Bundler.Bundle(Settings);
+            var aDouble = 500.00;
+            var actual = Bundler.Get<double>("caseinsensitive");
+            var check = Compare(actual, aDouble);
+            Assert.IsTrue(Math.Abs(actual - aDouble) < 0.01);
+        }
     }
 }
