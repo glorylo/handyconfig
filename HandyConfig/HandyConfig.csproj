@@ -41,7 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration\ConfigBundler.cs" />
-    <Compile Include="Configuration\HandyConfig.cs" />
+    <Compile Include="Configuration\HandyConfigSection.cs" />
     <Compile Include="Configuration\NameValueTypeElement.cs" />
     <Compile Include="Configuration\NameValueTypeElementCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
