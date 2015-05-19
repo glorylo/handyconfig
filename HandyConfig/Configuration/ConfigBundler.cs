@@ -33,7 +33,7 @@ namespace HandyConfig.Configuration
         {
             foreach (NameValueTypeElement s in settings)
             {
-                var o = Convert.ChangeType(s.Value, Type.GetType(s.Type));
+                var o = Convert.ChangeType(s.Value, Type.GetType(s.Type, throwOnError: true, ignoreCase: true));
                 UpsertSetting(s.Name, o);
                 Debug.WriteLine("Name: " + s.Name);
                 Debug.WriteLine("Value: " + o);
