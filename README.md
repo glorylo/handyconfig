@@ -26,7 +26,7 @@ Or in your App.config
 ```
 
 ```csharp   
-var configs = new Dictionary<string, object>();
+IDictionary<string, object> configs = new Dictionary<string, object>();
 var bundler = new ConfigBundler(configs);
 bundler.Bundle(HandyConfigSection.Settings);
 
