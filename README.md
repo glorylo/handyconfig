@@ -26,8 +26,8 @@ Or in your App.config
 ```
 
 ```csharp   
-IDictionary<string, object> configs = new Dictionary<string, object>();
-var bundler = new ConfigBundler(configs);
+
+var bundler = new ConfigBundler();
 bundler.Bundle(HandyConfigSection.Settings);
 
 // installApp == true
@@ -40,7 +40,7 @@ int timeoutSecs = bundler.Get<int>("TimeoutSecs");
 DateTime expiryDate = bundler.Get<DateTime>("ExpiryDate");
 
 // get back all the configuration settings
-configs = bundler.GetConfigs();
+IDictionary<string, object> configs = bundler.GetConfigs();
 
 ```
 
