@@ -8,6 +8,11 @@ namespace HandyConfig.Configuration
     {
         private readonly IDictionary<string, object> _configs;
 
+        public ConfigBundler()
+        {
+            _configs = new Dictionary<string, object>();
+        }
+
         public ConfigBundler(IDictionary<string, object> configs)
         {
             _configs = configs;

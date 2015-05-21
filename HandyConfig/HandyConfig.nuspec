@@ -11,21 +11,12 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
     <releaseNotes>
+      
+1.2.2 
+- aded ConfigBundler() constructor
+
 1.2.1 
 - added new class HandyConfigElement
-
-1.2.0
-- type attribute is now case insensitive
-- GetSetting() is now just Get()
-
-1.1.1
-- maintanence release
-      
-1.10
-- added GetSetting() to ConfigBundler
-
-1.0.0
-- initial release
 
     </releaseNotes>
     <copyright>Copyright 2015</copyright>

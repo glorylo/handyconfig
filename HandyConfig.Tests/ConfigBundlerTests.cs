@@ -16,7 +16,7 @@ namespace HandyConfig.Tests
         public void Setup()
         {
             Settings = HandyConfigSection.Settings;
-            Bundler = new ConfigBundler(new Dictionary<string, object>());
+            Bundler = new ConfigBundler();
         }
 
         [Test]
