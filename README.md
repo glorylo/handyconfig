@@ -78,7 +78,32 @@ Then add your settings under the handyconfig section.  Here is an entire templat
 </configuration>
 
 ```
+# Making use of HandyConfig for custom configurations
 
+You can make use of HandyConfig for your own customizations.   For example:
+
+```xml
+<machine name="test">
+   <add name="description" value="This is a test machine" />
+   <add name="ip" value="10.10.1.100" />
+   <add name="archive-count" value="5" type="System.Int32" />
+   <add name="clean-install" value="true" type="System.Boolean" />
+   <add name="backup-date" value="May 1, 2015" type="System.DateTime" />
+</machine>
+
+```
+
+```csharp
+    public class MachineElement : HandyConfigElement
+    {
+        [ConfigurationProperty("name", IsRequired = true, IsKey = true)]
+        public string Name
+        {
+            get { return this["name"] as string; }
+            set { this["name"] = value; }
+        }
+    }
+```
 
 Have fun,
 
